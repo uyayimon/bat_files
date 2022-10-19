@@ -28,6 +28,5 @@ rem _YYYYMMDD_hhmmss
 @REM set filename_aft=%filename_bef%_%today%_%now%%extension%
 
 echo %filename_aft%
-pause
 
 rename %~1 %filename_aft%
