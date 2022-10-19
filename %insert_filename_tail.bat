@@ -1,5 +1,5 @@
 @echo off
-setlocal enabledelayexpansion
+setlocal enabledelayedexpansion
 
 if "%~1"=="" (
   exit /b
@@ -15,6 +15,9 @@ set /p insert=insert string:
 
 for %%I in (!x!) do call :sub "%%I"
 
+endlocal
+
+
 :sub
 echo %~1
 set filename_bef=%~n1
@@ -26,6 +29,3 @@ set filename_aft=%filename_bef%%insert%%extension%
 echo %filename_aft%
 
 rename %1 %filename_aft%
-
-
-endlocal

@@ -1,5 +1,5 @@
 @echo off
-setlocal enabledelayexpansion
+setlocal enabledelayedexpansion
 
 if "%~1"=="" (
   exit /b
@@ -13,6 +13,8 @@ set time2=%TIME: =0%
 set now=%time2:~0,2%%time2:~3,2%%time2:~6,2%
 
 for %%I in (!x!) do call :sub "%%I"
+
+endlocal
 
 
 :sub
@@ -29,5 +31,3 @@ echo %filename_aft%
 pause
 
 rename %~1 %filename_aft%
-
-endlocal
